@@ -23,3 +23,15 @@ class LinkedList:
     def insert_beginning(self, new_value):
         new_node = Node(new_value, self.head_node)
         self.head_node = new_node
+
+    def stringify_list(self):
+        string_list = ""
+        current_node = self.head_node
+
+        while current_node is not None:
+            string_list += str(current_node.get_value()) + "\n"
+
+            next_node = current_node.get_next_node()
+            current_node = next_node
+
+        return string_list
